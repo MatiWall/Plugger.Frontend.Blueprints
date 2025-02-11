@@ -1,21 +1,12 @@
-
-
 import React from "react";
-import {createExtensionBluePrint, createExtensionInputNode } from "@plugger/extension"
+import {createExtensionBluePrint, createExtensionInputNode } from "@plugger/frontend-extension"
 import { headerRef } from "../AppLayoutBlueprint";
 import { z } from 'zod'
-import {
-    Box, 
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-} from '@mui/material'
+
+import { Header } from "@plugger/frontend-components";
 
 import { headerIconRef } from "./HeaderIconBlueprint";
 import { headerContentRef } from "./HeaderContentBlueprint";
-
-
 
 const HeaderBlueprint = createExtensionBluePrint({
     namespace: 'app',
@@ -32,46 +23,27 @@ const HeaderBlueprint = createExtensionBluePrint({
     }),
     provider: ({input, config, params}) => {
 
-      const AppHeader = () => {
+      const HeaderWrap = () => {
         const Icon = input.icon;
         const Content = input.content;
 
 
         return (
-            <Box sx={{ flexGrow: 1 }}>
-              <AppBar position="static">
-                <Toolbar>
-                  <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                  >
-                
-                  </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    { Icon ? <Icon></Icon> : 'Icon'}
-                  </Typography>
-                  <Box>
-                    {Content ? <Content/> : 'Add content using headerContentRef attached to app, layout, header'}
-                  </Box>
-                </Toolbar>
-              </AppBar>
-            </Box>
+            <Header icon={Icon} content={Content}/>
           );
         }
 
 
         
-        const Header = params?.header || AppHeader;
+        const HeaderComp = params?.header || HeaderWrap;
         return [
-            headerRef.with(Header)
+            headerRef.with(HeaderComp)
         ]
     }
 })
 
 
 export {
-    HeaderBlueprint
+    HeaderBlueprint, 
+    Header
 }

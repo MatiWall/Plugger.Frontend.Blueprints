@@ -1,5 +1,5 @@
 import React from "react";
-import {createExtensionBluePrint } from "@plugger/extension"
+import {createExtensionBluePrint } from "@plugger/frontend-extension"
 import { 
     Typography
 } from "@mui/material";

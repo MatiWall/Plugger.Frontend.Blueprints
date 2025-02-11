@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
+import {createExtensionBluePrint} from "@plugger/frontend-extension"
 import { z } from 'zod'
 import {
     Box,

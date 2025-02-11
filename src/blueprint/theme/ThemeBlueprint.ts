@@ -1,12 +1,10 @@
 import { createTheme } from "@mui/material";
 
-import {createExtensionBluePrint, createExtensionDataRef } from "@plugger/extension"
+import {createExtensionBluePrint, createExtensionDataRef } from "@plugger/frontend-extension"
+import { defaultTheme } from "@plugger/frontend-components";
 
 const themeRef = createExtensionDataRef();
 
-const pluggerTheme = createTheme({
-    
-});
 
 const ThemeBlueprint = createExtensionBluePrint({
     namespace: 'app',
@@ -16,7 +14,7 @@ const ThemeBlueprint = createExtensionBluePrint({
     output: [themeRef],
     provider: ({input, config, params}) =>{
         
-        const theme = params?.theme || pluggerTheme;
+        const theme = params?.theme || defaultTheme;
         
         return [
             themeRef.with(theme)

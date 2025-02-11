@@ -1,5 +1,5 @@
 import React from 'react'
-import { createExtensionBluePrint, createExtensionDataRef } from "@plugger/extension";
+import { createExtensionBluePrint, createExtensionDataRef } from "@plugger/frontend-extension";
 
 
 

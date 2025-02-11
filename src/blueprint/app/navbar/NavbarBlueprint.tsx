@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
-import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
+import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/frontend-extension"
+import { SideBar } from "@plugger/frontend-components";
 import { navbarRef } from "../AppLayoutBlueprint";
 import { 
     Box, 
@@ -24,46 +25,16 @@ const NavbarBlueprint = createExtensionBluePrint({
     kind: 'navbar',
     attachToo: {namespace: 'app', name: 'app', kind: 'layout'}, 
     output: [navbarRef],
-    configSchema: z.object({
-        itemsTopPadding: z.number().default(1)
-    }),
     input: {
         routeItems: createExtensionInputNode({ref: navbarItemRef, allowMultiple: true}), 
         tools: createExtensionInputNode({ref: navbarToolRef, allowMultiple: true}),
         title: createExtensionInputNode({ref: navbarTitleRef})
     },
     provider: ({input, config}) =>{
-        const TitleComponent = input?.title;
-        const titleMsg = 'Add Title';
         
         const Navbar = () => {
-            const theme = useTheme();
-            return (
-            <Box sx={{
-                height: '100vh', 
-                display: 'flex', 
-                flexDirection: 'column',
-                backgroundColor: theme.palette.secondary.light,
-                color: theme.palette.secondary.contrastText
-                }}>
-            <CssBaseline/>
-            <Box sx={{p: 1, flexGrow: 1}}>
-                <Toolbar>
-                    { TitleComponent ? <TitleComponent/> : titleMsg }
-                </Toolbar>
-                <Divider/>
-                <Toolbar sx={{p: 1, flexGrow: 1}}>
-                    <List sx={{display: 'flex', flexDirection: 'column', marginTop: config.itemsTopPadding}}>
-                        {input.routeItems.map((Item, idx) => <Item key={idx} />) || 'Navbar'}
-                    </List>
-                </Toolbar>
-            </Box>
-            <Divider/>
-            <Toolbar sx={{p: 1}}>
-                {input.tools.map((Tool, key) => <Tool key={key}></Tool>)}
-            </Toolbar>
-          </Box>
-        )}
+            return <SideBar title={input.title} links={input.routeItems} tools={input.tools}></SideBar>
+        }
             
         return [
             navbarRef.with(Navbar)

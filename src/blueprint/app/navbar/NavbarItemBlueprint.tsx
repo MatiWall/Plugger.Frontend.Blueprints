@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import {createExtensionBluePrint, createExtensionDataRef } from "@plugger/extension"
+import { createExtensionBluePrint, createExtensionDataRef } from "@plugger/frontend-extension"
 import { useRouteRef } from '@plugger/routing';
 import { useTheme } from '@emotion/react';
 import { ListItem, ListItemText } from '@mui/material'
+
+import { SideBarNavItem } from '@plugger/frontend-components';
 
 const navbarItemRef = createExtensionDataRef();
 
@@ -16,44 +18,17 @@ const NavbarItemBlueprint = createExtensionBluePrint({
     output: [navbarItemRef],
     provider: ({ input, config, params }) => {
 
-
+        const routeRef = params?.routeRef;
+        const Icon = params?.icon;
+        const title = params?.title;
 
         const Item = () => {
-            const routeGenerator = useRouteRef(params?.routeRef);
+
+            const routeGenerator = useRouteRef(routeRef);
             if (!routeGenerator) {
                 return <span>Invalid Route</span>;
             }
-            
-            const theme = useTheme();
-            
-            return (
-                <ListItem 
-                    sx={{
-                        color: theme.palette.primary.contrastText,
-                        "&:hover": {
-                            color: "inherit", 
-                            fontWeight: "bold"
-                        },
-                        p: 0,
-                    }}
-                    disableGutters={true}
-                    component={Link}
-                    to={routeGenerator()}
-
-                    >
-                        <ListItemText 
-                            primary={params?.title || 'Unnamed Link'}
-                            sx={{
-                                "& .MuiTypography-root": {
-                                    "&:hover": {
-                                        color: theme.palette.primary.light, // Ensure bold text on hover
-                                    },
-                                },
-
-                            }}    
-                        />
-                </ListItem>
-            );
+            return <SideBarNavItem icon={Icon} path={routeGenerator()} text={title} ></SideBarNavItem>
         };
 
         return [
@@ -63,6 +38,6 @@ const NavbarItemBlueprint = createExtensionBluePrint({
 });
 
 export {
-    NavbarItemBlueprint, 
+    NavbarItemBlueprint,
     navbarItemRef
 }

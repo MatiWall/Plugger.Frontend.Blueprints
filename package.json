@@ -1,10 +1,11 @@
 {
-  "name": "Plugger.Frontend.Blueprints",
-  "version": "0.0.1-dev1",
-  "main": "src/index.ts",
+  "name": "@plugger/frontend-blueprints",
+  "version": "0.0.1",
   "repository": "git@github.com:MatiWall/Plugger.Frontend.Blueprints.git",
   "author": "Matias Wallenius <MatiWall@live.dk>",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -19,8 +20,10 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.0",
     "@mui/material": "^6.4.0",
-    "@plugger/extension": "^0.1.5",
+    "@plugger/frontend-components": "^0.0.1",
+    "@plugger/frontend-extension": "^1.0.0",
     "@plugger/routing": "^0.1.6",
     "@types/react": "^19.0.7",
     "react": "^19.0.0",
@@ -35,8 +38,7 @@
     "@storybook/blocks": "8.6.0-alpha.0",
     "@storybook/react": "8.6.0-alpha.0",
     "@storybook/react-vite": "8.6.0-alpha.0",
-    "@storybook/test": "8.6.0-alpha.0",
-    "storybook": "8.6.0-alpha.0",
+    "@storybook/test": "^8.5.0",
     "typescript": "^5.7.3",
     "vite": "^6.0.9"
   }

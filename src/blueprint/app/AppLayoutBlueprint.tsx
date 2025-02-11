@@ -1,7 +1,8 @@
 import React, { ReactElement } from "react";
-import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
+import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/frontend-extension"
 import {Typography, Drawer, Box } from '@mui/material';
 import { z } from 'zod';
+import { ImageNotSupportedOutlined } from "@mui/icons-material";
 const appLayoutRef = createExtensionDataRef();
 
 const navbarRef = createExtensionDataRef();
@@ -38,7 +39,7 @@ const AppLayoutBlueprint = createExtensionBluePrint({
             const Content = input.content;
             
             const Footer = input.footer;
-
+            
             return (
             (
                 <Box sx={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>

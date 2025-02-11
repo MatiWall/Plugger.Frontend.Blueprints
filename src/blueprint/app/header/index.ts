@@ -1,10 +1,5 @@
-import { HeaderBlueprint } from "./HeaderBlueprint";
-import { HeaderContentBlueprint } from "./HeaderContentBlueprint";
-import { HeaderIconBlueprint } from "./HeaderIconBlueprint";
+export * from "./HeaderBlueprint";
+export * from "./HeaderContentBlueprint";
+export * from "./HeaderIconBlueprint";
 
 
-export {
-    HeaderBlueprint,
-    HeaderIconBlueprint,
-    HeaderContentBlueprint
-}

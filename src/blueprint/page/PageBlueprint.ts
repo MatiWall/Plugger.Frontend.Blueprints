@@ -1,4 +1,4 @@
-import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
+import {createExtensionBluePrint, createExtensionDataRef } from "@plugger/frontend-extension"
 
 
 
