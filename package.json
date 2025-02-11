@@ -1,6 +1,6 @@
 {
   "name": "@plugger/frontend-blueprints",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "git@github.com:MatiWall/Plugger.Frontend.Blueprints.git",
   "author": "Matias Wallenius <MatiWall@live.dk>",
   "license": "MIT",
