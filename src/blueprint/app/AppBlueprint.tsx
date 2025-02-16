@@ -4,7 +4,7 @@ import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import {createExtensionBluePrint, createExtensionInputNode, rootComponentRef } from "@plugger/frontend-extension"
 import { appLayoutRef } from './AppLayoutBlueprint'
-import { AppRouter} from "@plugger/routing";
+import { AppRouter} from "@plugger/frontend-routing";
 import { routeResolverRef } from "../routes/RoutesBlueprint";
 import { themeRef } from "../theme/ThemeBlueprint";
 

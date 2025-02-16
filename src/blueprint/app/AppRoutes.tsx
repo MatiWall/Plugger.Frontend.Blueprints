@@ -1,7 +1,7 @@
 import React from 'react'
 import { createExtensionBluePrint, createExtensionInputNode } from "@plugger/frontend-extension";
 import { contentRef } from "./AppLayoutBlueprint";
-import { RoutesBuilder, createRoutableComponent } from "@plugger/routing";
+import { RoutesBuilder, createRoutableComponent } from "@plugger/frontend-routing";
 import { pageMountPointRef, pageRef } from "./../page/PageBlueprint";
 
 
