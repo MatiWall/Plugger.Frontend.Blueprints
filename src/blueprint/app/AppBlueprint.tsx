@@ -28,11 +28,9 @@ const AppBlueprint = createExtensionBluePrint({
 
             return (
                 <ThemeProvider theme={theme}>
-                    <BrowserRouter>
-                        <AppRouter resolver={input.routeResolver}>
-                            <App />
-                        </AppRouter>
-                    </BrowserRouter>
+                    <AppRouter resolver={input.routeResolver}>
+                        <App />
+                    </AppRouter>
                 </ThemeProvider>
             )
         }
