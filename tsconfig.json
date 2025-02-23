@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES6",                       // Use ESModules
+    "module": "ESNext",
+    "target": "ESNext",                       // Use ESModules
     "moduleResolution": "node",             // Resolve modules like Node.js
     "esModuleInterop": true,                // Ensures ESModule compatibility
     "strict": true,                         // Enable strict type checking options
@@ -11,14 +11,11 @@
     "resolveJsonModule": true,              // Allow importing JSON files
     "outDir": "./dist",                     // Output directory for compiled files
     "sourceMap": true,                       // Generate sourcemap files
-    "jsx": "react",  
-    "lib": ["es6", "dom", "es2017"],
+    "jsx": "react-jsx",  
+    "lib": ["ESNext", "dom"],
     "declaration": true,                     // Generate declaration files
     "emitDeclarationOnly": false  
   },
   "include": ["src/**/*.ts", "src/app/App.tsx", "src/context/NotificationProvider.tsx"],
   "exclude": ["**/*.test.ts", "**/*.test.tsx"],
-  "paths": {
-    "@catcode/*": ["./node_modules/@catcode/*"]
-  }
 }
