@@ -2,40 +2,44 @@
 
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
-import {createExtensionBluePrint, createExtensionInputNode, rootComponentRef } from "@plugger/frontend-extension"
+import { createExtensionBluePrint, createExtensionInputNode, rootComponentRef } from "@plugger/frontend-extension"
 import { appLayoutRef } from './AppLayoutBlueprint'
-import { AppRouter} from "@plugger/frontend-routing";
+import { AppRouter } from "@plugger/frontend-routing";
 import { routeResolverRef } from "../routes/RoutesBlueprint";
 import { themeRef } from "../theme/ThemeBlueprint";
-
+import { BrowserRouter } from 'react-router-dom'
 
 const AppBlueprint = createExtensionBluePrint({
     kind: 'app',
     namespace: 'app',
     name: 'app',
-    attachToo: {namespace: 'root', name: 'app', kind: 'component'}, 
+    attachToo: { namespace: 'root', name: 'app', kind: 'component' },
     output: [rootComponentRef],
     input: {
-        app: createExtensionInputNode({ref: appLayoutRef}),
-        routeResolver: createExtensionInputNode({ref: routeResolverRef}), 
-        theme: createExtensionInputNode({ref: themeRef})
+        app: createExtensionInputNode({ ref: appLayoutRef }),
+        routeResolver: createExtensionInputNode({ ref: routeResolverRef }),
+        theme: createExtensionInputNode({ ref: themeRef })
     },
-    provider: ({input, config}) => {
+    provider: ({ input, config }) => {
         const AppRoot = () => {
             const App = input.app;
 
             const theme = input?.theme || createTheme();
-              
+
             return (
                 <ThemeProvider theme={theme}>
-                    <AppRouter resolver={input.routeResolver}>
-                        <App/>    
-                    </AppRouter>
+                    <BrowserRouter>
+                        <AppRouter resolver={input.routeResolver}>
+                            <App />
+                        </AppRouter>
+                    </BrowserRouter>
                 </ThemeProvider>
-        ) }  
+            )
+        }
         return [
-        rootComponentRef.with(AppRoot), 
-    ]}
+            rootComponentRef.with(AppRoot),
+        ]
+    }
 
 })
 

@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { createExtensionBluePrint, createExtensionDataRef } from "@plugger/frontend-extension"
-import { useRouteRef } from '@plugger/routing';
-import { useTheme } from '@emotion/react';
-import { ListItem, ListItemText } from '@mui/material'
+import { useRouteRef } from '@plugger/frontend-routing';
 
 import { SideBarNavItem } from '@plugger/frontend-components';
 
