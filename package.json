@@ -1,6 +1,6 @@
 {
   "name": "@plugger/frontend-blueprints",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "repository": "git@github.com:MatiWall/Plugger.Frontend.Blueprints.git",
   "author": "Matias Wallenius <MatiWall@live.dk>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "@mui/material": "^6.4.0",
     "@plugger/frontend-components": "^0.0.2",
     "@plugger/frontend-extension": "^1.0.2",
-    "@plugger/frontend-routing": "^0.3.3",
+    "@plugger/frontend-routing": "^0.3.6",
     "@types/react": "^19.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

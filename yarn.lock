@@ -1490,10 +1490,10 @@
     uuid "^11.0.3"
     zod "3.24.2"
 
-"@plugger/frontend-routing@^0.3.3":
-  version "0.3.3"
-  resolved "http://verdaccio.mw.local/@plugger/frontend-routing/-/frontend-routing-0.3.3.tgz#ada8c3d7203694e6d323c9f32394e8d26195fd48"
-  integrity sha512-otiy0zYSnFUsTE5t0KWIBocb8YxSBbpsjFGY6B4E5elLfD8M1TJm28zEEKUqLqvdYtZNVcTvUFs/GP9kdq1g3A==
+"@plugger/frontend-routing@^0.3.6":
+  version "0.3.6"
+  resolved "http://verdaccio.mw.local/@plugger/frontend-routing/-/frontend-routing-0.3.6.tgz#f010dbe563559dc716a14cdf8fe993594d3b96cf"
+  integrity sha512-UD2NhQ5bDZBWKtGpe4x+7XTvYDX7M+W5R9GOwGAa6S98cldIBW0Ws/dfVcj+D8Yu7souVm00t1Yal62uNDhHvA==
   dependencies:
     react "19"
     react-dom "19"
